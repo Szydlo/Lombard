@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://pawnshop/upgrades.gd" type="Script" id=1]
+[ext_resource path="res://pawnshop/furnitures/doors/images/l2_door_destroyed.png" type="Texture" id=2]
+[ext_resource path="res://pawnshop/furnitures/doors/images/l2_door_upgraded.png" type="Texture" id=3]
+[ext_resource path="res://pawnshop/furnitures/doors/images/l2_door_regular.png" type="Texture" id=4]
+[ext_resource path="res://pawnshop/furnitures/doors/images/l2_door_fixed.png" type="Texture" id=5]
+
+[resource]
+script = ExtResource( 1 )
+name = "Level2"
+regular = ExtResource( 4 )
+upgraded = ExtResource( 3 )
+destroyed = ExtResource( 2 )
+fixed = ExtResource( 5 )
+price = 200
+regular_apperance_factor = 2.0
+regular_security_factor = 2.0
+upgraded_apperance_factor = 3.0
+upgraded_security_factor = 3.0

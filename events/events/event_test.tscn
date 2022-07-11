@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://events/events/images/cat_with_gun.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node
+
+export(String) var event_name = \"default name\"
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource( 1 )
+event_name = "fine event"
+
+[node name="Cat" type="TextureRect" parent="."]
+margin_left = 393.0
+margin_top = 294.0
+margin_right = 641.0
+margin_bottom = 481.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 381.0
+margin_top = 274.0
+margin_right = 660.0
+margin_bottom = 288.0
+text = "WKURWIONY KOT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"

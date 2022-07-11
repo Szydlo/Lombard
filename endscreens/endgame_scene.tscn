@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://dialogs/assets/letters_for_leaners.tres" type="DynamicFont" id=1]
+[ext_resource path="res://endscreens/ui_endgame.gd" type="Script" id=2]
+
+[node name="EndGame" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.0
+margin_bottom = -1.0
+script = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
+
+[node name="Container" type="VBoxContainer" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="Header" type="Label" parent="Background/Container"]
+modulate = Color( 1, 0, 0, 1 )
+margin_top = 245.0
+margin_right = 1024.0
+margin_bottom = 277.0
+custom_fonts/font = ExtResource( 1 )
+text = "End of the game."
+align = 1
+valign = 1
+
+[node name="Info" type="Label" parent="Background/Container"]
+margin_top = 281.0
+margin_right = 1024.0
+margin_bottom = 313.0
+custom_fonts/font = ExtResource( 1 )
+text = "U just died."
+align = 1
+valign = 1
+
+[node name="leavea" type="Button" parent="Background/Container"]
+margin_top = 317.0
+margin_right = 1024.0
+margin_bottom = 355.0
+custom_fonts/font = ExtResource( 1 )
+text = "Leave"
+
+[connection signal="pressed" from="Background/Container/leavea" to="." method="_on_leave_pressed"]

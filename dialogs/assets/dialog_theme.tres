@@ -1,0 +1,18 @@
+[gd_resource type="Theme" load_steps=6 format=2]
+
+[ext_resource path="res://dialogs/assets/letters_for_leaners.tres" type="DynamicFont" id=1]
+[ext_resource path="res://dialogs/assets/button_hover.png" type="Texture" id=2]
+[ext_resource path="res://dialogs/assets/button_normal.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 400, 100 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 400, 100 )
+
+[resource]
+default_font = ExtResource( 1 )
+Button/styles/hover = SubResource( 1 )
+Button/styles/normal = SubResource( 2 )

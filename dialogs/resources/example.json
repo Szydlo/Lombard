@@ -1,0 +1,31 @@
+{
+    "0" : {
+        "text": "siema siema siema",
+
+        "answers" : [
+            {"text": "daj mi item", "functions" :  
+                [
+                    {"action" : "sell_item", "arguments" : ["watch"]},
+                    {"action" : "go_to_dialog", "arguments" : ["1"]}
+                ]
+            },
+            {"text": "go to another", 
+                "action" : "go_to_dialog", "arguments" : ["1"]
+            },
+            {"text": "next client", "functions" :
+                [
+                    {"action" : "new_client", "arguments" : []}
+                ]
+            }
+        ]
+    }, 
+
+    "1" : {
+        "text" : "nie no az tyle to nie",
+
+        "answers" : [
+            {"text": "no no", "action" : "printSomething", "arguments" : ["to ja"]},
+            {"text": "no no", "action" : "printSomething", "arguments" : ["to ja"]}
+        ]
+    }
+}

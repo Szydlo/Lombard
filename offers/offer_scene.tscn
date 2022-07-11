@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://dialogs/assets/letters_for_leaners.tres" type="DynamicFont" id=2]
+[ext_resource path="res://offers/ui_offer.gd" type="Script" id=3]
+
+[node name="Offer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+actual_price = 10
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 238.0
+margin_bottom = 225.0
+color = Color( 0, 0, 0, 0.333333 )
+
+[node name="ItemIcon" type="TextureRect" parent="."]
+margin_left = 69.0
+margin_top = 8.0
+margin_right = 154.0
+margin_bottom = 93.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="ItemName" type="Label" parent="."]
+margin_left = 3.0
+margin_top = 96.0
+margin_right = 234.0
+margin_bottom = 128.0
+custom_fonts/font = ExtResource( 2 )
+text = "Nazwa itemu"
+align = 1
+valign = 1
+
+[node name="ClientPrice" type="Label" parent="."]
+margin_left = 3.0
+margin_top = 122.0
+margin_right = 234.0
+margin_bottom = 163.0
+custom_fonts/font = ExtResource( 2 )
+text = "Cena klienta: 250000"
+align = 1
+valign = 1
+
+[node name="Minus" type="Button" parent="."]
+margin_left = 65.0
+margin_top = 167.0
+margin_right = 83.0
+margin_bottom = 187.0
+text = "-"
+
+[node name="Plus" type="Button" parent="."]
+margin_left = 147.0
+margin_top = 168.0
+margin_right = 167.0
+margin_bottom = 188.0
+text = "+"
+
+[node name="PlayerPrice" type="Label" parent="."]
+margin_left = 82.0
+margin_top = 167.0
+margin_right = 145.0
+margin_bottom = 187.0
+text = "0"
+align = 1
+valign = 1
+
+[node name="Offer" type="Button" parent="."]
+margin_top = 194.0
+margin_right = 238.0
+margin_bottom = 224.0
+text = "Zaoferuj"
+
+[connection signal="pressed" from="Minus" to="." method="_on_Minus_pressed"]
+[connection signal="pressed" from="Plus" to="." method="_on_Plus_pressed"]
+[connection signal="pressed" from="Offer" to="." method="_on_Offer_pressed"]

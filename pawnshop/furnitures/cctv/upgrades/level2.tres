@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://pawnshop/upgrades.gd" type="Script" id=1]
+[ext_resource path="res://pawnshop/furnitures/cctv/images/l2_camera.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "Kamera"
+upgraded = ExtResource( 2 )
+price = 0
+regular_apperance_factor = 0.0
+regular_security_factor = 0.0
+upgraded_apperance_factor = 0.0
+upgraded_security_factor = 4.0

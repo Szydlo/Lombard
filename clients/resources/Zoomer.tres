@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://clients/client_resource.gd" type="Script" id=1]
+[ext_resource path="res://clients/images/zoomer.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "Zoomer"
+apperance = ExtResource( 2 )
+already_visited = false
+price_factor = 0.15
+max_anger = 3.0
+actual_anger = 0.0
+anger_factor = 0.5
+max_patience = 3.0
+actual_patience = 0.0
+patience_factor = 0.75
+max_compromise = 3.0
+actual_compromise = 0.25
+compromise_factor = 0.25
+dialog_json = "res://dialogs/resources/example.json"

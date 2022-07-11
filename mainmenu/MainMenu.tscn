@@ -1,0 +1,101 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://mainmenu/assets/background.jpg" type="Texture" id=1]
+[ext_resource path="res://mainmenu/assets/golden_elephant_72.tres" type="DynamicFont" id=2]
+[ext_resource path="res://mainmenu/assets/golden_elephant_21.tres" type="DynamicFont" id=3]
+[ext_resource path="res://mainmenu/mainmenu_theme.tres" type="Theme" id=4]
+[ext_resource path="res://mainmenu/ui_mainmenu.gd" type="Script" id=5]
+[ext_resource path="res://player/doomer_without.png" type="Texture" id=6]
+[ext_resource path="res://player/cigarette.tscn" type="PackedScene" id=7]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Player" type="TextureRect" parent="."]
+margin_left = 573.0
+margin_top = 232.0
+margin_right = 1045.0
+margin_bottom = 599.0
+texture = ExtResource( 6 )
+expand = true
+
+[node name="Smoke" parent="." instance=ExtResource( 7 )]
+
+[node name="Gamename" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 117.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_fonts/font = ExtResource( 2 )
+text = "Lombard"
+align = 1
+valign = 1
+
+[node name="Studio" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -313.0
+margin_top = -27.0
+margin_right = -8.0
+margin_bottom = -5.0
+custom_fonts/font = ExtResource( 3 )
+text = "Ver: 0.1, By MidnightStudio (c) 2022"
+align = 2
+valign = 1
+
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
+anchor_bottom = 1.0
+margin_right = 284.0
+alignment = 1
+
+[node name="Play" type="Button" parent="ButtonContainer"]
+margin_top = 221.0
+margin_right = 284.0
+margin_bottom = 271.0
+rect_min_size = Vector2( 0, 50 )
+theme = ExtResource( 4 )
+text = "Graj"
+
+[node name="Options" type="Button" parent="ButtonContainer"]
+margin_top = 275.0
+margin_right = 284.0
+margin_bottom = 325.0
+rect_min_size = Vector2( 0, 50 )
+theme = ExtResource( 4 )
+text = "Ustawienia"
+
+[node name="Exit" type="Button" parent="ButtonContainer"]
+margin_top = 329.0
+margin_right = 284.0
+margin_bottom = 379.0
+rect_min_size = Vector2( 0, 50 )
+theme = ExtResource( 4 )
+text = "Wyjdz"
+
+[node name="MainMenuPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Fade" type="ColorRect" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="SceneFade" type="Tween" parent="."]
+
+[connection signal="pressed" from="ButtonContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="ButtonContainer/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="ButtonContainer/Exit" to="." method="_on_Exit_pressed"]

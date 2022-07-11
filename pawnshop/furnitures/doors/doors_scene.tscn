@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://pawnshop/furniture.gd" type="Script" id=1]
+[ext_resource path="res://pawnshop/furnitures/doors/upgrades/level2.tres" type="Resource" id=2]
+[ext_resource path="res://pawnshop/furnitures/doors/upgrades/level1.tres" type="Resource" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+
+[node name="TextureRect" type="TextureRect"]
+margin_right = 134.0
+margin_bottom = 156.0
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 1 )
+furniture_name = "Drzwi"
+upgrades = [ ExtResource( 3 ), ExtResource( 2 ) ]
