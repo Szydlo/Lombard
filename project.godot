@@ -9,40 +9,20 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "HBoxContainer",
-"class": "ContributorClass",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/ContributorClass.gd"
-}, {
 "base": "Resource",
 "class": "Event",
 "language": "GDScript",
 "path": "res://events/event_resource.gd"
-}, {
-"base": "PanelContainer",
-"class": "GistItem",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/GistItem.gd"
 }, {
 "base": "",
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
 }, {
-"base": "HBoxContainer",
-"class": "InvitationItem",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/InvitationItem.gd"
-}, {
 "base": "Resource",
 "class": "Item",
 "language": "GDScript",
 "path": "res://items/item_resource.gd"
-}, {
-"base": "PanelContainer",
-"class": "RepositoryItem",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/RepositoryItem.gd"
 }, {
 "base": "Resource",
 "class": "Upgrades",
@@ -50,13 +30,9 @@ _global_script_classes=[ {
 "path": "res://pawnshop/upgrades.gd"
 } ]
 _global_script_class_icons={
-"ContributorClass": "",
 "Event": "",
-"GistItem": "",
 "GitAPI": "",
-"InvitationItem": "",
 "Item": "",
-"RepositoryItem": "",
 "Upgrades": ""
 }
 

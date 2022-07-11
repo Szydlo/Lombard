@@ -2,10 +2,10 @@ extends Control
 
 const game_scene = preload("res://gameplay/Game.tscn")
 
-onready var audio_player = $MainMenuPlayer
-onready var fade = $Fade
-onready var tween = $Tween
-onready var scene_fade = $SceneFade
+onready var audio_player := $MainMenuPlayer
+onready var fade := $Fade
+onready var tween := $Tween
+onready var scene_fade := $SceneFade
 
 func _ready() -> void:
 	fade.visible = true
