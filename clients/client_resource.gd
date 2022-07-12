@@ -1,8 +1,9 @@
 extends Resource
+class_name Client
 
 export(String) var name = "default client"
 export(Texture) var apperance
-export(bool) var already_visited = false
+export(bool) var is_able_to_enter = true
 
 export(float) var price_factor = 0.15
 

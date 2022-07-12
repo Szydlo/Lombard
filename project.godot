@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Resource",
+"class": "Client",
+"language": "GDScript",
+"path": "res://clients/client_resource.gd"
+}, {
+"base": "Resource",
 "class": "Event",
 "language": "GDScript",
 "path": "res://events/event_resource.gd"
@@ -30,6 +35,7 @@ _global_script_classes=[ {
 "path": "res://pawnshop/upgrades.gd"
 } ]
 _global_script_class_icons={
+"Client": "",
 "Event": "",
 "GitAPI": "",
 "Item": "",

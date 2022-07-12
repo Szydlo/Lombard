@@ -4,6 +4,7 @@ signal new_client(client)
 signal client_left()
 
 export(Resource) var actual_client
+export(Resource) var last_client
 export var clients_database := []
 
 func load_clients() -> void:
@@ -24,20 +25,31 @@ func load_clients() -> void:
 func _ready() -> void:
 	load_clients()
 	
-func is_new_client(client: Resource) -> bool:
-	return client.already_visited
-	
+func is_able_to_enter(client: Resource) -> bool:
+	return client.is_able_to_enter
+
+func check_client(client:Resource) -> bool:
+	return !is_able_to_enter(client) or last_client == client
+
+func get_client_from_name(name: String) -> Resource:
+	for client in clients_database:
+		if client.name == name:
+			return client
+			
+	return null
+
 func get_random_client() -> Resource:
 	randomize()
 	var random_client: Resource = clients_database[randi() % clients_database.size()]
 
 	var index:int = 0
 
-	while  is_new_client(random_client) :
+	while check_client(random_client):
 		random_client = clients_database[randi() % clients_database.size()]
+		
 		index += 1
 		
-		if index> clients_database.size():
+		if index > clients_database.size():
 			gamemode.end_game("No more clients.")
 			return null
 		
@@ -51,8 +63,8 @@ func set_new_client() -> void:
 	
 	if actual_client == null:
 		return
-		
-	actual_client.already_visited = true
+	
+	last_client = actual_client
 	emit_signal("new_client", actual_client)
 
 func leave_actual_client() -> void:

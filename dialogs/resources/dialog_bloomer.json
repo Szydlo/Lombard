@@ -3,8 +3,12 @@
         "text" : "Hi, My name is Bloomer, lately I droped habbit of smoking, so I wanted to sell my last cigarette pack.",
     
         "answers" : [
-            {"text" : "Let's make a deal.", "functions" : []},
-            {"text" : "Good for you, but I don't wanna buy it.", "functions" : []}
+            {"text" : "Let's make a deal.", "functions" : [
+                {"action" : "sell_item", "arguments" : ["cigarettes"]}
+            ]},
+            {"text" : "Good for you, but I don't wanna buy it.", "functions" : [
+                {"action" : "next_client", "arguments" : []}
+            ]}
         ]
     }
 }

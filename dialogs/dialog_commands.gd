@@ -29,5 +29,8 @@ func hide_answers(args: Array) -> void:
 func set_dialog_text(args: Array) -> void:
 	dialog_manager.ui_dialog.set_dialog_ui(client_manager.actual_client.name, args[0])
 
+func set_is_able_to_enter(args: Array) -> void:
+	client_manager.get_client_from_name(args[0]).is_able_to_enter = args[1]
+
 func _on_timer_timeout() -> void:
 	day_manager.next_client()

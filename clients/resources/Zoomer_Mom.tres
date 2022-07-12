@@ -1,13 +1,13 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://clients/client_resource.gd" type="Script" id=1]
-[ext_resource path="res://clients/images/zoomer.png" type="Texture" id=2]
+[ext_resource path="res://clients/images/zoomer_mom.png" type="Texture" id=2]
 
 [resource]
 script = ExtResource( 1 )
-name = "Zoomer"
+name = "Zoomer's Mom"
 apperance = ExtResource( 2 )
-is_able_to_enter = true
+is_able_to_enter = false
 price_factor = 0.15
 max_anger = 3.0
 actual_anger = 0.0
@@ -18,4 +18,4 @@ patience_factor = 0.75
 max_compromise = 3.0
 actual_compromise = 0.25
 compromise_factor = 0.25
-dialog_json = "res://dialogs/resources/dialog_zoomer.json"
+dialog_json = "res://dialogs/resources/dialog_zoomer_mom.json"
