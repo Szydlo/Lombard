@@ -42,6 +42,10 @@ config/name="Lombard"
 run/main_scene="res://mainmenu/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[audio]
+
+default_bus_layout="res://bus_layout.tres"
+
 [autoload]
 
 player="*res://player/Player.gd"
@@ -57,6 +61,15 @@ dialog_commands="*res://dialogs/dialog_commands.gd"
 offer_manager="*res://offers/offer_manager.gd"
 item_manager="*res://items/item_manager.gd"
 
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/test_width=1280
+window/size/test_height=720
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
+
 [gdnative]
 
 singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
@@ -64,6 +77,13 @@ singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
 [global]
 
 anti=false
+WINDOW=false
+window=false
+
+[locale]
+
+translations=PoolStringArray( "res://languages/lombard_langs.en.translation", "res://languages/lombard_langs.pl.translation" )
+locale_filter=[ 0, [  ] ]
 
 [physics]
 

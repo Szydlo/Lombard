@@ -3,9 +3,8 @@ extends Control
 onready var client_name = $DialogBG/DialogContainer/ClientName
 onready var client_text = $DialogBG/DialogContainer/ClientText
 
-onready var answer1 = $AnswersBG/AnswersContainer/Answer1
-onready var answer2 = $AnswersBG/AnswersContainer/Answer2
-onready var answer3 = $AnswersBG/AnswersContainer/Answer3
+onready var answers_bg = $AnswersBG
+onready var answers_container = $AnswersBG/AnswersContainer
 
 func _ready():
 	client_manager.connect("client_left", self, "_on_client_left")
@@ -17,16 +16,21 @@ func set_dialog_ui(cname : String, ctext : String) -> void:
 	visible = true
 
 func set_answers_ui(answers: Array) -> void:
-	answer1.text = answers[0]
-	answer2.text = answers[1]
-	answer3.text = answers[2]
+	for button in answers_container.get_children():
+		button.queue_free()
 	
-	if answers[0] == "":
-		answer1.visible = false
-	if answers[1] == "":
-		answer2.visible = false
-	if answers[2] == "":
-		answer3.visible = false
+	for i in range(answers.size()):
+		if answers[i] != "":
+			var button := Button.new()
+			button.text = answers[i]
+			answers_container.add_child(button)
+			button.connect("pressed", self, "_on_Answers_clicked", [i])
 
 func _on_client_left() -> void:
 	visible = false
+
+func _on_Answers_clicked(index: int) -> void:
+	var functions: Array = dialog_manager.actual_dialog[dialog_manager.actual_line]["answers"][index]["functions"]
+	
+	for i in range(0, functions.size()):
+		dialog_commands.call_func(functions[i]["action"], functions[i]["arguments"])

@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://dialogs/assets/letters_for_leaners.tres" type="DynamicFont" id=1]
+[ext_resource path="res://screens/ui_story.gd" type="Script" id=2]
+
+[node name="Story" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Text" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -465.5
+margin_top = -540.0
+margin_right = 465.5
+margin_bottom = 540.0
+custom_fonts/font = ExtResource( 1 )
+text = "Year 1989
+You are living in Godunov, a large city in a totalitarian country, times are tough, you are struggling to make ends meet. You are dreaming moving out to west, you heard stories from Uncle, that living there is great. Unfortunately borders are strict, but you have a friend, which can prepare right papers, but it costs $1000. You inherited a pawnshop from dad, which passed last year. Pawnshop was closed since 1985, your dad had to close it, because of illness. The pawnshop is in terrible state.
+Are you able to make your dreams come true?
+"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="TextTween" type="Tween" parent="."]
+
+[node name="FadeTween" type="Tween" parent="."]
+
+[node name="Press" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -465.0
+margin_top = -121.0
+margin_right = 466.0
+margin_bottom = 540.0
+custom_fonts/font = ExtResource( 1 )
+text = "Press \"Enter\""
+align = 1
+valign = 1
+autowrap = true
+
+[connection signal="tween_completed" from="TextTween" to="." method="_on_TextTween_tween_completed"]
+[connection signal="tween_completed" from="FadeTween" to="." method="_on_FadeTween_tween_completed"]

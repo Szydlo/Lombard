@@ -18,4 +18,4 @@ patience_factor = 0.75
 max_compromise = 3.0
 actual_compromise = 0.25
 compromise_factor = 0.25
-dialog_json = "res://dialogs/resources/example.json"
+dialog_json = "res://dialogs/resources/dialog_zoomer.json"

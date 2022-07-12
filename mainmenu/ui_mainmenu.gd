@@ -1,8 +1,8 @@
 extends Control
 
-const game_scene = preload("res://gameplay/Game.tscn")
+const game_scene := preload("res://gameplay/Game.tscn")
+const settings_scene := preload("res://mainmenu/settings.tscn")
 
-onready var audio_player := $MainMenuPlayer
 onready var fade := $Fade
 onready var tween := $Tween
 onready var scene_fade := $SceneFade
@@ -20,7 +20,8 @@ func _on_Play_pressed() -> void:
 	scene_fade.start()
 
 func _on_Options_pressed() -> void:
-	pass # Replace with function body.
+	var scene = settings_scene.instance()
+	add_child(scene)
 
 func _on_Exit_pressed() -> void:
 	get_tree().quit()

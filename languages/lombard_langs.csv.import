@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://languages/lombard_langs.en.translation", "res://languages/lombard_langs.pl.translation" ]
+
+source_file="res://languages/lombard_langs.csv"
+dest_files=[ "res://languages/lombard_langs.en.translation", "res://languages/lombard_langs.pl.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

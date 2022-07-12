@@ -4,6 +4,9 @@ onready var end_game_screen: PackedScene = preload("res://endscreens/endgame_sce
 
 export(int) var DEFAULT_MONEY = 1000
 
+func _init():
+	OS.window_size = Vector2(1280, 720)
+
 func start_game() -> void:
 	furnitures_manager.load_furnitures()
 	player.money = DEFAULT_MONEY

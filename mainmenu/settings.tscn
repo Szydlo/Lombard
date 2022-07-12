@@ -1,0 +1,185 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://dialogs/assets/letters_for_leaners.tres" type="DynamicFont" id=1]
+[ext_resource path="res://mainmenu/ui_settings.gd" type="Script" id=2]
+
+[node name="Settings" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 56.0
+margin_bottom = 67.0
+rect_scale = Vector2( 0.9951, 0.988598 )
+color = Color( 0, 0, 0, 0.556863 )
+
+[node name="SettingsLabel" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 24.0
+margin_bottom = 56.0
+rect_scale = Vector2( 1, 0.996599 )
+custom_fonts/font = ExtResource( 1 )
+text = "SETTINGS_GAME"
+align = 1
+valign = 1
+
+[node name="TabContainer" type="TabContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -335.5
+margin_top = -192.0
+margin_right = 335.5
+margin_bottom = 192.0
+
+[node name="Graphics" type="Tabs" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Container" type="VBoxContainer" parent="TabContainer/Graphics"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -177.0
+margin_top = -116.5
+margin_right = 177.0
+margin_bottom = 116.5
+alignment = 1
+
+[node name="Resolution" type="OptionButton" parent="TabContainer/Graphics/Container"]
+margin_top = 62.0
+margin_right = 354.0
+margin_bottom = 82.0
+
+[node name="Fullscreen" type="CheckButton" parent="TabContainer/Graphics/Container"]
+margin_top = 86.0
+margin_right = 354.0
+margin_bottom = 126.0
+text = "Fullscreen"
+
+[node name="Vsync" type="CheckButton" parent="TabContainer/Graphics/Container"]
+margin_top = 130.0
+margin_right = 354.0
+margin_bottom = 170.0
+text = "V-Sync"
+
+[node name="Sound" type="Tabs" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -177.0
+margin_top = -58.0
+margin_right = 177.0
+margin_bottom = 58.0
+alignment = 1
+
+[node name="Main" type="Label" parent="TabContainer/Sound/VBoxContainer"]
+margin_top = 3.0
+margin_right = 354.0
+margin_bottom = 17.0
+text = "Main volume:"
+
+[node name="MainVolumne" type="HSlider" parent="TabContainer/Sound/VBoxContainer"]
+margin_top = 21.0
+margin_right = 354.0
+margin_bottom = 37.0
+min_value = -80.0
+max_value = 6.0
+value = -40.0
+
+[node name="Music" type="Label" parent="TabContainer/Sound/VBoxContainer"]
+margin_top = 41.0
+margin_right = 354.0
+margin_bottom = 55.0
+text = "Music volume:"
+
+[node name="MusicVolume" type="HSlider" parent="TabContainer/Sound/VBoxContainer"]
+margin_top = 59.0
+margin_right = 354.0
+margin_bottom = 75.0
+min_value = -80.0
+max_value = 6.0
+value = -40.0
+
+[node name="SFX" type="Label" parent="TabContainer/Sound/VBoxContainer"]
+margin_top = 79.0
+margin_right = 354.0
+margin_bottom = 93.0
+text = "SFX volume:"
+
+[node name="SFXVolume" type="HSlider" parent="TabContainer/Sound/VBoxContainer"]
+margin_top = 97.0
+margin_right = 354.0
+margin_bottom = 113.0
+min_value = -80.0
+max_value = 6.0
+value = -40.0
+
+[node name="Gameplay" type="Tabs" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Container" type="VBoxContainer" parent="TabContainer/Gameplay"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -184.0
+margin_top = -106.0
+margin_right = 184.0
+margin_bottom = 106.0
+alignment = 1
+
+[node name="Language" type="OptionButton" parent="TabContainer/Gameplay/Container"]
+margin_top = 96.0
+margin_right = 368.0
+margin_bottom = 116.0
+
+[node name="Apply" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 251.0
+margin_top = -193.0
+margin_right = 299.0
+margin_bottom = -173.0
+text = "Apply"
+
+[node name="Exit" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 305.0
+margin_top = -193.0
+margin_right = 325.0
+margin_bottom = -173.0
+text = "X"
+
+[connection signal="pressed" from="Apply" to="." method="_on_Apply_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]

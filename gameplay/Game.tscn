@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://gameplay/ui_gameplay.gd" type="Script" id=1]
 [ext_resource path="res://mainmenu/assets/background.jpg" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://pawnshop/furnitures/cctv/cctv_scene.tscn" type="PackedScene" id=10]
 [ext_resource path="res://dialogs/dialogs_scene.tscn" type="PackedScene" id=11]
 [ext_resource path="res://offers/offer_scene.tscn" type="PackedScene" id=12]
+[ext_resource path="res://screens/story_scene.tscn" type="PackedScene" id=13]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 83, 534 )
@@ -51,7 +52,7 @@ margin_top = 49.0
 margin_right = 111.0
 margin_bottom = 87.0
 custom_fonts/font = ExtResource( 5 )
-text = "Dzien: 1"
+text = "Day: 1"
 valign = 1
 
 [node name="Client" type="TextureRect" parent="Interface"]
@@ -69,10 +70,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -419.0
-margin_top = -325.0
+margin_left = -619.0
+margin_top = -480.0
 texture = ExtResource( 3 )
 expand = true
+
+[node name="Smoke" parent="Interface/Player" instance=ExtResource( 4 )]
+position = Vector2( 181, 324 )
 
 [node name="ClientTweenIn" type="Tween" parent="Interface"]
 
@@ -83,15 +87,13 @@ margin_top = 93.0
 margin_right = 144.0
 margin_bottom = 126.0
 theme = ExtResource( 8 )
-text = "Twój lombard"
-
-[node name="Smoke" parent="Interface" instance=ExtResource( 4 )]
-position = Vector2( 758, 496 )
+text = "Your pawnshop"
 
 [node name="Dialogs" parent="Interface" instance=ExtResource( 11 )]
 visible = false
 
 [node name="Offer" parent="Interface" instance=ExtResource( 12 )]
+visible = false
 anchor_left = 1.0
 anchor_bottom = 0.0
 margin_left = -379.0
@@ -106,18 +108,27 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -31.0
-margin_top = -123.0
-margin_right = 23.0
-margin_bottom = 63.0
+margin_left = -54.0
+margin_top = -211.0
+margin_right = 42.0
+margin_bottom = 114.0
 
 [node name="CCTV" parent="Interface/Furnitures" instance=ExtResource( 10 )]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -103.0
-margin_top = 23.0
-margin_right = -31.0
-margin_bottom = 84.0
+margin_left = -223.0
+margin_top = 28.0
+margin_right = -41.0
+margin_bottom = 182.0
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="Interface"]
+bus = "Music"
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="Interface"]
+bus = "SFX"
+
+[node name="Story" parent="Interface" instance=ExtResource( 13 )]
+visible = false
 
 [node name="FadeOut" type="CanvasLayer" parent="."]
 script = ExtResource( 1 )

@@ -1,0 +1,13 @@
+{
+    "0" : {
+        "text": "Are you selling maybe diswasher?",
+
+        "answers" : [
+            {"text": "It's a pitty, but not.", "functions" :  
+                [
+                    {"action" : "sell_item", "arguments" : ["watch"]}
+                ]
+            }
+        ]
+    }
+}

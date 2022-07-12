@@ -8,7 +8,7 @@
 [ext_resource path="res://player/doomer_without.png" type="Texture" id=6]
 [ext_resource path="res://player/cigarette.tscn" type="PackedScene" id=7]
 
-[node name="Control" type="Control"]
+[node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 5 )
@@ -16,22 +16,27 @@ script = ExtResource( 5 )
 [node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 2.0
+margin_bottom = 2.0
 texture = ExtResource( 1 )
 expand = true
 
 [node name="Player" type="TextureRect" parent="."]
-margin_left = 573.0
-margin_top = 232.0
-margin_right = 1045.0
-margin_bottom = 599.0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -672.0
+margin_top = -522.0
 texture = ExtResource( 6 )
 expand = true
 
-[node name="Smoke" parent="." instance=ExtResource( 7 )]
+[node name="Smoke" parent="Player" instance=ExtResource( 7 )]
+position = Vector2( 196, 350 )
 
 [node name="Gamename" type="Label" parent="."]
 anchor_right = 1.0
-margin_bottom = 117.0
+margin_bottom = 222.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
@@ -56,34 +61,38 @@ valign = 1
 
 [node name="ButtonContainer" type="VBoxContainer" parent="."]
 anchor_bottom = 1.0
-margin_right = 284.0
+margin_right = 356.0
 alignment = 1
 
 [node name="Play" type="Button" parent="ButtonContainer"]
-margin_top = 221.0
-margin_right = 284.0
-margin_bottom = 271.0
+margin_top = 461.0
+margin_right = 356.0
+margin_bottom = 511.0
 rect_min_size = Vector2( 0, 50 )
 theme = ExtResource( 4 )
-text = "Graj"
+text = "PLAY_GAME"
 
 [node name="Options" type="Button" parent="ButtonContainer"]
-margin_top = 275.0
-margin_right = 284.0
-margin_bottom = 325.0
+margin_top = 515.0
+margin_right = 356.0
+margin_bottom = 565.0
 rect_min_size = Vector2( 0, 50 )
 theme = ExtResource( 4 )
-text = "Ustawienia"
+text = "SETTINGS_GAME"
 
 [node name="Exit" type="Button" parent="ButtonContainer"]
-margin_top = 329.0
-margin_right = 284.0
-margin_bottom = 379.0
+margin_top = 569.0
+margin_right = 356.0
+margin_bottom = 619.0
 rect_min_size = Vector2( 0, 50 )
 theme = ExtResource( 4 )
-text = "Wyjdz"
+text = "EXIT_GAME"
 
-[node name="MainMenuPlayer" type="AudioStreamPlayer" parent="."]
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+bus = "Music"
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+bus = "SFX"
 
 [node name="Fade" type="ColorRect" parent="."]
 visible = false

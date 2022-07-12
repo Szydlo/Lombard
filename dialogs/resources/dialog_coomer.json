@@ -1,32 +1,24 @@
 {
     "0" : {
-        "text": "siema siema siema",
+        "text": "Are you selling... you know what?",
 
         "answers" : [
-            {"text": "daj mi item", "functions" :  
+            {"text": "What?", "functions" :  
                 [
                     {"action" : "sell_item", "arguments" : ["watch"]},
                     {"action" : "go_to_dialog", "arguments" : ["1"]}
                 ]
             },
-            {"text": "go to another", "functions" :
+            {"text": "Sure", "functions" :
                 [
                     {"action" : "go_to_dialog", "arguments" : ["1"]}
                 ]
             },
-            {"text": "next client", "functions" :
+            {"text": "Please, use health care.", "functions" :
                 [
-                    {"action" : "new_client", "arguments" : []}
+                    {"action" : "next_client", "arguments" : []}
                 ]
             }
         ]
-    }, 
-
-    "1" : {
-        "text" : "nie no az tyle to nie", "answers" : {}
-    },
-
-    "2" : {
-        "text" : "", "answers" : {}
     }
 }
