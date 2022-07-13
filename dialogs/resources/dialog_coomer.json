@@ -5,20 +5,54 @@
         "answers" : [
             {"text": "What?", "functions" :  
                 [
-                    {"action" : "sell_item", "arguments" : ["watch"]},
                     {"action" : "go_to_dialog", "arguments" : ["1"]}
                 ]
             },
             {"text": "Sure", "functions" :
                 [
-                    {"action" : "go_to_dialog", "arguments" : ["1"]}
-                ]
+                    {"action" : "go_to_dialog", "arguments" : ["2"]}
+                ],
+                "condition_to_show" : {"action" : "has_item", "arguments" : ["bisacodyl"]}
             },
-            {"text": "Please, use health care.", "functions" :
+            {"text": "It's not worth it.", "functions" :
                 [
                     {"action" : "next_client", "arguments" : []}
                 ]
             }
         ]
+    }, 
+
+    "1" : {
+        "text" : "You know what...",
+
+        "answers" : [
+            {"text" : "Aaa... I know what, but it's not free (deal)", "functions" : [
+                {"action" : "go_to_dialog", "arguments" : ["2"]}
+            ], 
+            "condition_to_show" : {"action" : "has_item", "arguments" : ["bisacodyl"]}
+            },
+            {"text" : "Dunno", "functions" : [
+                {"action" : "set_dialog_text", "arguments" : ["Are you fucking stupid?"]},
+                {"action" : "hide_answers", "arguments" : []},
+                {"action" : "next_client_with_timer", "arguments" : [1.5]}
+            ], 
+            "condition_to_show" : {"action" : "has_item", "arguments" : ["bisacodyl"]}
+            },
+            {"text" : "I don't know what", "functions" : [
+                {"action" : "next_client", "arguments" : []}
+            ],
+            "condition_to_show" : {"action" : "has_not_item", "arguments" : ["bisacodyl"]}
+            }
+        ]
+    },
+
+    "2" : {
+        "text" : "It's FBI, you stupid fuck, you are arrested for the crime of selling drugs",
+
+        "answers" : [
+            {"text" : "Oh fuck", "functions" : [
+                {"action" : "end_game", "arguments" : ["FBI closed your pawnshop.\nYou were sentenced to 5 years for selling drugs."]}
+            ]}
+            ]
     }
 }

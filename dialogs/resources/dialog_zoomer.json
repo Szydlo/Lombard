@@ -13,7 +13,8 @@
 
             {"text": "Sure", "functions" :
                 [
-                    {"action" : "go_to_dialog", "arguments" : ["1"]}
+                    {"action" : "sell_item", "arguments" : ["cigarettes"]},
+                    {"action" : "set_is_able_to_enter", "arguments" : ["Zoomer's Mom", true]}
                 ],
                 "condition_to_show" : {"action" : "has_item", "arguments" : ["cigarettes"]}
             },

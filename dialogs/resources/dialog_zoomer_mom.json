@@ -1,32 +1,18 @@
 {
     "0" : {
-        "text": "Good Morning... mister, Can I buy there c-c-c-cigaretts maybe??",
+        "text": "You sold to my son, cigarettes?",
 
         "answers" : [
-            {"text": "Shitling, Are you even adult?", "functions" :  
+            {"text": "Yes, of course", "functions" :
                 [
-                    {"action" : "go_to_dialog", "arguments" : ["1"]}
+                    {"action" : "end_game", "arguments" : ["Did you do your's ethic homework?"]}
                 ]
             },
-            {"text": "Sure", "functions" :
+            {"text": "Did you know that your son faked id?", "functions" :
                 [
-                    {"action" : "go_to_dialog", "arguments" : ["1"]}
-                ]
-            },
-            {"text": "Nope", "functions" :
-                [
-                    {"action" : "next_client", "arguments" : [0]}
+                    {"action" : "next_client", "arguments" : []}
                 ]
             }
-        ]
-    },
-
-    "1" : {
-        "text" : "Y-y-yes, look at my ID (hand-written piece of paper)",
-
-        "answers" : [
-            {"text" : "I bieleve you", "functions" : []},
-            {"text" : "Leave, or I'll call The Police", "functions" : []} 
         ]
     }
 }

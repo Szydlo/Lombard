@@ -49,7 +49,7 @@ func get_random_client() -> Resource:
 		
 		index += 1
 		
-		if index > clients_database.size():
+		if index > clients_database.size()+1:
 			gamemode.end_game("No more clients.")
 			return null
 		

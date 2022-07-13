@@ -17,11 +17,17 @@ func next_client_with_timer(args: Array) -> void:
 	timer.start()
 	timer.connect("timeout", self, "_on_timer_timeout")
 
+func end_game(args: Array) -> void:
+	gamemode.end_game(args[0])
+
 func next_client(args: Array) -> void:
 	day_manager.next_client()
 
+func buy_item(args: Array) -> void:
+	offer_manager.set_offer(args[0], false)
+	
 func sell_item(args: Array) -> void:
-	offer_manager.set_offer(args[0])
+	offer_manager.set_offer(args[0], true)
 
 func hide_answers(args: Array) -> void:
 	dialog_manager.hide_answers()
@@ -34,6 +40,9 @@ func set_is_able_to_enter(args: Array) -> void:
 
 func has_item(args: Array) -> bool:
 	return !storage.has_item(args[0])
+	
+func has_not_item(args: Array) -> bool:
+	return storage.has_item(args[0])
 
 func _on_timer_timeout() -> void:
 	day_manager.next_client()

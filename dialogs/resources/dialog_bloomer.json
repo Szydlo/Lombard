@@ -4,7 +4,8 @@
     
         "answers" : [
             {"text" : "Let's make a deal.", "functions" : [
-                {"action" : "sell_item", "arguments" : ["cigarettes"]}
+                {"action" : "buy_item", "arguments" : ["cigarettes"]},
+                {"action" : "set_is_able_to_enter", "arguments" : ["Bloomer", false]}
             ]},
             {"text" : "Good for you, but I don't wanna buy it.", "functions" : [
                 {"action" : "next_client", "arguments" : []}

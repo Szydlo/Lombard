@@ -11,7 +11,7 @@ func add_item(item: Resource) -> void:
 	emit_signal("item_change")
 	
 func remove_item(item: Resource) -> void:
-	if !items.find(item): return
+	if !items.has(item): return
 	items.erase(item)
 	emit_signal("item_change")
 	

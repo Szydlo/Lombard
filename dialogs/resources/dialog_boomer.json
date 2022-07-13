@@ -5,7 +5,7 @@
         "answers" : [
             {"text": "It's a pitty, but not.", "functions" :  
                 [
-                    {"action" : "sell_item", "arguments" : ["watch"]},
+                    {"action" : "buy_item", "arguments" : ["watch"]},
                     {"action" : "set_is_able_to_enter", "arguments" : ["Boomer", false]}
                 ]
             }
