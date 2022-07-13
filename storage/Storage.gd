@@ -27,3 +27,6 @@ func remove_item_from_string(item: String) -> void:
 	
 func use_item(item: Resource) -> void:
 	pass
+	
+func has_item(item: String) -> bool:
+	return items.has(item_manager.get_item(item))

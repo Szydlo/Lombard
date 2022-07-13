@@ -15,7 +15,7 @@ func set_dialog_ui(cname : String, ctext : String) -> void:
 	
 	visible = true
 
-func set_answers_ui(answers: Array) -> void:
+func set_answers_ui(answers: Array, answers_id: Array) -> void:
 	for button in answers_container.get_children():
 		button.queue_free()
 	
@@ -24,7 +24,7 @@ func set_answers_ui(answers: Array) -> void:
 			var button := Button.new()
 			button.text = answers[i]
 			answers_container.add_child(button)
-			button.connect("pressed", self, "_on_Answers_clicked", [i])
+			button.connect("pressed", self, "_on_Answers_clicked", [answers_id[i]])
 
 func _on_client_left() -> void:
 	visible = false

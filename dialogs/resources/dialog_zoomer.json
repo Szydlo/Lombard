@@ -3,16 +3,21 @@
         "text": "Good Morning... mister, Can I buy there c-c-c-cigaretts maybe??",
 
         "answers" : [
-            {"text": "Shitling, Are you even adult?", "functions" :  
+            {
+                "text": "Shitling, Are you even adult?", "functions" :  
                 [
                     {"action" : "go_to_dialog", "arguments" : ["1"]}
-                ]
+                ],
+                "condition_to_show" : {"action" : "has_item", "arguments" : ["cigarettes"]}
             },
+
             {"text": "Sure", "functions" :
                 [
                     {"action" : "go_to_dialog", "arguments" : ["1"]}
-                ]
+                ],
+                "condition_to_show" : {"action" : "has_item", "arguments" : ["cigarettes"]}
             },
+
             {"text": "Nope", "functions" :
                 [
                     {"action" : "next_client", "arguments" : [0]}

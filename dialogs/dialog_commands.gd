@@ -1,7 +1,7 @@
 extends Node
 
-func call_func(name: String, args: Array) -> void:
-	call(name, args)
+func call_func(name: String, args: Array):
+	return call(name, args)
 
 func print_something(args: Array) -> void:
 	print(args[0])
@@ -32,5 +32,9 @@ func set_dialog_text(args: Array) -> void:
 func set_is_able_to_enter(args: Array) -> void:
 	client_manager.get_client_from_name(args[0]).is_able_to_enter = args[1]
 
+func has_item(args: Array) -> bool:
+	return !storage.has_item(args[0])
+
 func _on_timer_timeout() -> void:
 	day_manager.next_client()
+	
