@@ -7,7 +7,7 @@
 script = ExtResource( 1 )
 name = "Matiszp"
 apperance = ExtResource( 2 )
-is_able_to_enter = false
+is_able_to_enter = true
 price_factor = 0.15
 max_anger = 3.0
 actual_anger = 0.0

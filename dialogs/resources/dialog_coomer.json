@@ -16,6 +16,7 @@
             },
             {"text": "It's not worth it.", "functions" :
                 [
+                    {"action" : "change_dialog", "arguments" : ["Coomer", "dialog_coomer_2.json"]},
                     {"action" : "next_client", "arguments" : []}
                 ]
             }

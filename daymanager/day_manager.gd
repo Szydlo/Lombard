@@ -36,7 +36,7 @@ func get_day() -> int:
 	
 func next_client() -> void:
 	if actual_clents >= clients_for_actual_day:
-		end_day("Koniec klientów na dzisiaj.\n{random_event}")
+		end_day("No more clients for today.\n{random_event}")
 		return
 	
 	actual_clents += 1

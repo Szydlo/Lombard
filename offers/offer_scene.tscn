@@ -70,7 +70,7 @@ valign = 1
 margin_top = 194.0
 margin_right = 238.0
 margin_bottom = 224.0
-text = "Zaoferuj"
+text = "Offer"
 
 [connection signal="pressed" from="Minus" to="." method="_on_Minus_pressed"]
 [connection signal="pressed" from="Plus" to="." method="_on_Plus_pressed"]

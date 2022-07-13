@@ -14,7 +14,8 @@
             {"text": "Sure", "functions" :
                 [
                     {"action" : "sell_item", "arguments" : ["cigarettes"]},
-                    {"action" : "set_is_able_to_enter", "arguments" : ["Zoomer's Mom", true]}
+                    {"action" : "set_is_able_to_enter", "arguments" : ["Zoomer's Mom", true]},
+                    {"action" : "set_is_able_to_enter", "arguments" : ["Zoomer", false]}
                 ],
                 "condition_to_show" : {"action" : "has_item", "arguments" : ["cigarettes"]}
             },
@@ -31,8 +32,16 @@
         "text" : "Y-y-yes, look at my ID (hand-written piece of paper)",
 
         "answers" : [
-            {"text" : "I bieleve you", "functions" : []},
-            {"text" : "Leave, or I'll call The Police", "functions" : []} 
+            {"text" : "I believe you", "functions" : [
+                {"action" : "sell_item", "arguments" : ["cigarettes"]},
+                {"action" : "set_is_able_to_enter", "arguments" : ["Zoomer", false]}
+                ], 
+                "condition_to_show" : {"action" : "has_item", "arguments" : ["cigarettes"]}
+            },
+            {"text" : "Leave, or I'll call The Police", "functions" : [
+                {"action" : "next_client", "arguments" : []},
+                {"action" : "set_is_able_to_enter", "arguments" : ["Zoomer", false]}
+            ]} 
         ]
     }
 }

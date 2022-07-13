@@ -8,7 +8,8 @@
                 {"action" : "set_is_able_to_enter", "arguments" : ["Bloomer", false]}
             ]},
             {"text" : "Good for you, but I don't wanna buy it.", "functions" : [
-                {"action" : "next_client", "arguments" : []}
+                {"action" : "next_client", "arguments" : []},
+                {"action" : "set_is_able_to_enter", "arguments" : ["Bloomer", false]}
             ]}
         ]
     }

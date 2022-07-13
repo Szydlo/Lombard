@@ -1,0 +1,13 @@
+{
+    "0" : {
+        "text" : "Thanks for help, I own you, take it.",
+
+        "answers" : [
+            {"text" : "Oh, thanks.", "functions" : [
+                {"action" : "give_money", "arguments" : [10000]},
+                {"action" : "next_client", "arguments" : []},
+                {"action" : "set_is_able_to_enter", "arguments" : ["Coomer", false]}
+            ]}
+        ]
+    }
+}

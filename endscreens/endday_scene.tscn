@@ -22,28 +22,37 @@ alignment = 1
 
 [node name="Header" type="Label" parent="Background/Container"]
 modulate = Color( 1, 0, 0.984314, 1 )
-margin_top = 245.0
-margin_right = 1024.0
-margin_bottom = 277.0
+margin_top = 485.0
+margin_right = 1920.0
+margin_bottom = 517.0
 custom_fonts/font = ExtResource( 1 )
 text = "End of the day."
 align = 1
 valign = 1
 
 [node name="Info" type="Label" parent="Background/Container"]
-margin_top = 281.0
-margin_right = 1024.0
-margin_bottom = 313.0
+margin_top = 521.0
+margin_right = 1920.0
+margin_bottom = 553.0
 custom_fonts/font = ExtResource( 1 )
 text = "Nic specjalnego, wyjebali ci tylko okna."
 align = 1
 valign = 1
 
 [node name="newday" type="Button" parent="Background/Container"]
-margin_top = 317.0
-margin_right = 1024.0
-margin_bottom = 355.0
+margin_top = 557.0
+margin_right = 1920.0
+margin_bottom = 595.0
 custom_fonts/font = ExtResource( 1 )
 text = "New day"
 
+[node name="go_aboard" type="Button" parent="Background/Container"]
+visible = false
+margin_top = 578.0
+margin_right = 1920.0
+margin_bottom = 616.0
+custom_fonts/font = ExtResource( 1 )
+text = "Go aboard ($10,000)"
+
 [connection signal="pressed" from="Background/Container/newday" to="." method="_on_newday_pressed"]
+[connection signal="pressed" from="Background/Container/go_aboard" to="." method="_on_go_aboard_pressed"]

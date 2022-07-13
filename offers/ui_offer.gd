@@ -18,7 +18,7 @@ func set_offer_ui(item: Resource, cprice: int) -> void:
 	visible = true
 	actual_price = cprice
 	item_name.text = item.name
-	client_price.text = "Cena klienta: " + str(cprice)
+	client_price.text = "Client price: " + str(cprice)
 	player_price.text = str(cprice)
 	item_icon.texture = item.icon
 

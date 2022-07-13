@@ -5,12 +5,15 @@
         "answers" : [
             {"text": "Yes, of course", "functions" :
                 [
-                    {"action" : "end_game", "arguments" : ["Did you do your's ethic homework?"]}
+                    {"action" : "end_game", "arguments" : ["80iq"]}
                 ]
             },
             {"text": "Did you know that your son faked id?", "functions" :
                 [
-                    {"action" : "next_client", "arguments" : []}
+                    {"action" : "set_is_able_to_enter", "arguments" : ["Zoomer's Mom", false]},
+                    {"action" : "set_dialog_text", "arguments" : ["You stupid pig"]},
+                    {"action" : "hide_answers", "arguments" : []},
+                    {"action" : "next_client_with_timer", "arguments" : [1.5]}
                 ]
             }
         ]
